@@ -131,9 +131,11 @@ export default async function ProjectCaseStudyPage({
                               }`}
                             >
                               {project.frontmatter.status
-                                .charAt(0)
-                                .toUpperCase() +
-                                project.frontmatter.status.slice(1)}
+                                ? project.frontmatter.status
+                                    .charAt(0)
+                                    .toUpperCase() +
+                                  project.frontmatter.status.slice(1)
+                                : 'Completed'}
                             </div>
                           </div>
                         </div>

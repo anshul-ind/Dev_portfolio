@@ -112,7 +112,7 @@ const ProjectMeta = ({
                   : 'outline'
             }
           >
-            {status.charAt(0).toUpperCase() + status.slice(1)}
+            {status ? status.charAt(0).toUpperCase() + status.slice(1) : 'Completed'}
           </Badge>
         </div>
       )}

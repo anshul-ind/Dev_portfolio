@@ -57,7 +57,7 @@ export function ProjectContent({ frontmatter, content }: ProjectContentProps) {
           {/* Project Status and Technologies */}
           <div className="flex flex-wrap items-center gap-3">
             <Badge variant={statusVariant} className="text-sm">
-              {status ? status.charAt(0).toUpperCase() + status.slice(1) : 'Unknown'}
+              {status ? status.charAt(0).toUpperCase() + status.slice(1) : 'Completed'}
             </Badge>
             {technologies.slice(0, 3).map((tech) => (
               <Badge key={tech} variant="outline" className="text-xs">
@@ -104,7 +104,7 @@ export function ProjectContent({ frontmatter, content }: ProjectContentProps) {
                 Status
               </h5>
               <Badge variant={statusVariant} className="text-xs">
-                {status.charAt(0).toUpperCase() + status.slice(1)}
+                {status ? status.charAt(0).toUpperCase() + status.slice(1) : 'Completed'}
               </Badge>
             </div>
           </div>
