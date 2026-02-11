@@ -1,27 +1,45 @@
 export const certificates = [
   {
-    file: '/blog/frontend-part-1.png',
-    title: 'SSoC Certificate',
-    issuer: 'Summer of Code (SSoC)',
-    date: '2025-10-10',
+    file: '/certificates/VoidHacks.png',
+    title: 'Void Hack 7.0 Winner',
+    issuer: 'Void Hack 7.0',
+    date: '2024-01-15',
+    description: 'Won ₹20,000 prize in hackathon competition'
   },
   {
-    file: '/blog/how-to-be-me.png',
-    title: 'Example Certificate 1',
-    issuer: 'Example Issuer',
-    date: '2024-01-01',
+    file: '/certificates/HackIndia 2025.png',
+    title: 'HackIndia Participant',
+    issuer: 'National Web3 & AI Hackathon',
+    date: '2024-03-20',
+    description: 'Participated in national-level hackathon at Noida'
   },
   {
-    file: '/blog/frontend-part-1.png',
-    title: 'Example Certificate 2',
-    issuer: 'Example Issuer',
-    date: '2023-08-01',
+    file: '/certificates/DevHacks.png',
+    title: 'DevHack Participant',
+    issuer: 'CDGI Hackathon',
+    date: '2023-12-10',
+    description: 'Participated in college-level hackathon'
   },
   {
-    file: '/blog/how-to-be-me.png',
-    title: 'SSoC Participation Certificate',
-    issuer: 'SSoC',
-    date: '2025-10-10',
+    file: '/certificates/RedHat.png',
+    title: 'Red Hat Certification',
+    issuer: 'Red Hat',
+    date: '2023-06-15',
+    description: 'Red Hat Certified System Administrator'
+  },
+  {
+    file: '/certificates/Walmart.png',
+    title: 'Walmart Virtual Experience Program',
+    issuer: 'Walmart',
+    date: '2023-08-20',
+    description: 'Completed virtual internship program'
+  },
+  {
+    file: '/certificates/Accenture.png',
+    title: 'Accenture Virtual Developer Program',
+    issuer: 'Accenture',
+    date: '2023-09-10',
+    description: 'Completed virtual developer program'
   },
 ];
 

@@ -100,9 +100,9 @@ export function ExperienceCard({ experience }: ExperienceCardProps) {
                 </Tooltip>
               )}
               {experience.isCurrent && (
-                <div className="flex items-center gap-1 rounded-md border-green-300 bg-green-500/10 px-2 py-1 text-xs">
-                  <div className="size-2 animate-pulse rounded-full bg-green-500"></div>
-                  Working
+                <div className="flex items-center gap-1 rounded-md border-green-3 bg-green-5/1 px-0 py-0 text-xs">
+                  
+                  
                 </div>
               )}
             </div>
@@ -113,7 +113,7 @@ export function ExperienceCard({ experience }: ExperienceCardProps) {
         <div className="text-secondary flex flex-col md:text-right">
           <p>
             {experience.startDate} -{' '}
-            {experience.isCurrent ? 'Present' : experience.endDate}
+            {experience.isCurrent ? "Present" : experience.endDate}
           </p>
           <p>{experience.location}</p>
         </div>

@@ -7,27 +7,27 @@ import Phone from '@/components/svgs/devices/Phone';
 
 export const devices = [
   {
-    name: 'Apple MacBook Pro 16"in M4 48GB 512GB',
+    name: 'Dell vostro 1.5 version 48GB 512GB',
     icon: <Laptop className="size-4" />,
   },
   {
-    name: 'LG Ultragear 27GN650 (27 inch, 68.5 cm)',
+    name: 'LG Ultragear 27GN650',
     icon: <Monitor className="size-4" />,
   },
   {
-    name: 'Magic Keyboard',
+    name: 'Keyboard',
     icon: <Keyboard className="size-4" />,
   },
   {
-    name: 'Logitech MX Master 3S Mouse',
+    name: 'Zebronics Gaming Mouse',
     icon: <Mouse className="size-4" />,
   },
   {
-    name: 'Crossbeats Roar 2.0 (Special Addition)',
+    name: 'Apple Headphones (Special Addition)',
     icon: <Headphones className="size-4" />,
   },
   {
-    name: 'Samsung S23 (256 GB)',
+    name: 'Redmi Note 10S',
     icon: <Phone className="size-4" />,
   },
 ];
@@ -42,6 +42,7 @@ export const webExtensions = [
   { name: 'daily.dev', href: 'https://daily.dev/' },
   { name: 'Grammarly', href: 'https://www.grammarly.com/' },
   { name: 'Wappalyzer', href: 'https://www.wappalyzer.com/' },
+  { name: 'Dark Reader', href: 'https://darkreader.org/' },
   {
     name: 'ColorZilla',
     href: 'https://chromewebstore.google.com/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp?hl=en',

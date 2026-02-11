@@ -1,184 +1,107 @@
-import { Download, FileText, Settings } from 'lucide-react';
+import { Download, Settings, Code, Terminal } from 'lucide-react';
 
 export const steps = [
   {
     id: 1,
-    title: 'Download necessary files',
+    title: 'Install Development Tools',
     icon: <Download className="size-4" />,
     content: [
       {
-        type: 'download',
-        name: 'Fira-code.zip',
-        description: "Unzip the font's file",
-        href: '/setup/fira-code.zip',
+        type: 'instruction',
+        text: 'Install Node.js (v18 or higher) from nodejs.org',
       },
       {
         type: 'instruction',
-        text: 'Select all the fonts, right click, and click to Install',
-      },
-      {
-        type: 'download',
-        name: 'vsc-extensions.txt',
-        description: 'Place this file in downloads',
-        href: '/setup/vsc-extensions.txt',
+        text: 'Install Bun package manager from bun.sh',
       },
       {
         type: 'instruction',
-        text: 'Open the vscode in downloads directory',
+        text: 'Install Visual Studio Code from code.visualstudio.com',
       },
       {
         type: 'instruction',
-        text: 'Install VSC Export & Import extension in vs code.',
+        text: 'Install Git from git-scm.com',
       },
     ],
   },
   {
     id: 2,
-    title: 'Installing all the extensions',
-    icon: <FileText className="size-4" />,
+    title: 'VS Code Extensions Setup',
+    icon: <Code className="size-4" />,
     content: [
       {
         type: 'instruction',
-        text: 'Open Command Palette by pressing the keyboard shortcut',
+        text: 'Install essential extensions for development:',
       },
       {
-        type: 'shortcut',
-        text: 'Cmd + ⇧ + P (Mac) / Ctrl + ⇧ + P (Windows)',
-      },
-      {
-        type: 'instruction',
-        text: 'Enter the text in prompt and press Enter ⏎',
-      },
-      {
-        type: 'prompt',
-        text: 'VSC Export & Import',
-      },
-      {
-        type: 'instruction',
-        text: 'All extension will start to install',
+        type: 'list',
+        items: [
+          'ES7+ React/Redux/React-Native snippets',
+          'Prettier - Code formatter',
+          'ESLint',
+          'Auto Rename Tag',
+          'Bracket Pair Colorizer',
+          'GitLens',
+          'Thunder Client (for API testing)',
+          'Tailwind CSS IntelliSense',
+        ],
       },
     ],
   },
   {
     id: 3,
-    title: 'VS Code Settings',
+    title: 'Configure Development Environment',
     icon: <Settings className="size-4" />,
     content: [
       {
         type: 'instruction',
-        text: 'Open Command Palette by pressing the keyboard shortcut',
+        text: 'Configure VS Code settings for optimal development:',
       },
       {
-        type: 'shortcut',
-        text: 'Cmd + ⇧ + P (Mac) / Ctrl + ⇧ + P (Windows)',
+        type: 'list',
+        items: [
+          'Set Prettier as default formatter',
+          'Configure ESLint for auto-fix on save',
+          'Set up Git configuration',
+          'Configure terminal integration',
+        ],
       },
+    ],
+  },
+  {
+    id: 4,
+    title: 'AI Tools & Productivity',
+    icon: <Terminal className="size-4" />,
+    content: [
       {
         type: 'instruction',
-        text: 'Enter the text in prompt and press Enter ⏎',
+        text: 'Set up AI-powered development tools:',
       },
       {
-        type: 'prompt',
-        text: 'Preferences: Open Settings (JSON)',
-      },
-      {
-        type: 'instruction',
-        text: 'Copy the settings.json from the below window',
+        type: 'list',
+        items: [
+          'ChatGPT for code assistance',
+          'Claude for debugging help',
+          'Perplexity for research',
+          'Cursor IDE for AI-assisted coding',
+          'Replit for quick prototyping',
+        ],
       },
     ],
   },
 ];
 
 export const settingsJson = `{
-    "CodeGPT.model": "gpt-4",
-    "vscode-edge-devtools.webhint": false,
-    "editor.linkedEditing": true,
-    "editor.minimap.enabled": false,
-    "cmake.configureOnOpen": true,
-    "code-runner.runInTerminal": true,
-    "code-runner.saveFileBeforeRun": true,
-    "liveServer.settings.donotShowInfoMsg": true,
-    "[html]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[css]": {
-      "editor.defaultFormatter": "HookyQR.beautify"
-    },
-    "explorer.confirmDragAndDrop": false,
-    "liveServer.settings.donotVerifyTags": true,
-    "github.copilot.advanced": {},
-    "editor.cursorSmoothCaretAnimation": "on",
-    "editor.cursorBlinking": "smooth",
-    "files.autoSave": "afterDelay",
-    "[javascript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "explorer.confirmDelete": false,
-    "editor.stickyScroll.enabled": false,
-    "git.autofetch": true,
-    "git.postCommitCommand": "push",
-    "workbench.iconTheme": "material-icon-theme",
-    
-    // Silence the Noise
-    "breadcrumbs.enabled": false,
-    "editor.hover.enabled": true,
-    "workbench.tips.enabled": false,
-    "editor.colorDecorators": false,
-    "workbench.startupEditor": "none",
-    "editor.lightbulb.enabled": "off",
-    "editor.overviewRulerBorder": false,
-    "editor.renderLineHighlight": "none",
-    "editor.occurrencesHighlight": "off",
-    "problems.decorations.enabled": false,
-    "editor.renderControlCharacters": false,
-    "editor.hideCursorInOverviewRuler": true,
-    "editor.gotoLocation.multipleReferences": "goto",
-    "editor.gotoLocation.multipleDefinitions": "goto",
-    "editor.gotoLocation.multipleDeclarations": "goto",
-    "workbench.editor.enablePreviewFromQuickOpen": false,
-    "editor.gotoLocation.multipleImplementations": "goto",
-    "editor.gotoLocation.multipleTypeDefinitions": "goto",
-  
-    "vscode_custom_css.imports": [
-      "file:///E:/vscode/custom-vscode.css",
-      "file:///E:/vscode/custom-vscode-script.js"
-    ],
-  
-    "[typescriptreact]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "editor.fontFamily": ""fira code", Consolas, 'Courier New', monospace",
-    "workbench.statusBar.visible": false,
-    "[javascriptreact]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "git-auto-pull.watchForChanges": true,
-    "git-auto-pull.pullInterval": 2,
-    "[json]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "editor.defaultFormatter": "HookyQR.beautify",
     "editor.formatOnSave": true,
-    "eslint.run": "onSave",
-    "cSpell.userWords": [
-      "autofetch",
-      "Consolas",
-      "donot",
-      "esbenp",
-      "fileupload",
-      "fira",
-      "tabnine",
-      "webhint"
-    ],
-    "workbench.settings.applyToAllProfiles": [
-      "github.copilot.editor.enableAutoCompletions"
-    ],
-    "emmet.triggerExpansionOnTab": true,
-    "emmet.useInlineCompletions": true,
-    "tailwindCSS.emmetCompletions": true,
-    "workbench.colorTheme": "Night Owl (No Italics)",
-    "editor.wordWrap": "wordWrapColumn",
-    "reactSnippets.settings.importReactOnTop": false,
-    "[typescript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
+    "tailwindCSS.includeLanguages": {
+        "javascript": "javascriptreact",
+        "typescript": "typescriptreact"
     }
-  }`;
+}`;

@@ -6,8 +6,8 @@
  */
 
 export const githubConfig = {
-  username: 'ramxcodes',
-  apiUrl: 'https://github-contributions-api.deno.dev',
+  username: 'anshul-ind',
+  apiUrl: 'https://github.com/anshul-ind',
 
   // Display settings
   title: 'GitHub Activity',

@@ -1,14 +1,9 @@
-# Sleek Portfolio by ramxcodes
+# Sleek Portfolio by Anshul Chouhan
 
 A modern, responsive portfolio website built with Next.js 15, TypeScript, Tailwind CSS, and Shadcn UI. Features a blog system, project showcase, work experience timeline, and contact form with Telegram integration.
 
 ![Portfolio Preview](/public/meta/hero.png)
 
-## Deploy
-
-Click here to your portfolio template now:
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Framxcodes%2Fsleek-portfolio&env=TELEGRAM_BOT_TOKEN,TELEGRAM_CHAT_ID,GEMINI_API_KEY,NEXT_PUBLIC_URL,NEXT_PUBLIC_UMAMI_SRC,NEXT_PUBLIC_UMAMI_ID)
 
 ## Features
 
@@ -81,7 +76,7 @@ NEXT_PUBLIC_UMAMI_ID="your-umami-website-id"
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/ramxcodes/sleek-portfolio.git
+   git clone https://github.com/anshul-ind/sleek-portfolio.git
    cd sleek-portfolio
    ```
 
@@ -112,16 +107,18 @@ NEXT_PUBLIC_UMAMI_ID="your-umami-website-id"
 The project uses configuration files in the `src/config` directory for easy customization:
 
 - `About.tsx` - About section content
+- `Achievements.tsx` - Certificates and achievements configuration
 - `Contact.tsx` - Contact form settings
 - `Experience.tsx` - Work experience details
 - `Footer.tsx` - Footer links and content
 - `Gears.tsx` - Setup/gear section
 - `Hero.tsx` - Hero section content
+- `JourneyImages.tsx` - Journey events and hackathon images
 - `Meta.tsx` - SEO and metadata
 - `Navbar.tsx` - Navigation links
 - `Projects.tsx` - Project showcase settings
-- `Quote.ts` - Random quotes configuration
-- `Resume.ts` - Resume section details
+- `Quote.tsx` - Random quotes configuration
+- `Resume.tsx` - Resume section details
 - `Setup.tsx` - Development setup information
 - `cat.ts` - Enable disable the cat
 

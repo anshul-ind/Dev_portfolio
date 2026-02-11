@@ -1,7 +1,7 @@
 export const contactConfig = {
-  title: 'Contact',
+  title: 'Contact Me',
   description:
-    'Get in touch with me. I will get back to you as soon as possible.',
+    'Feel free to reach out for collaborations, hackathons, or just to connect! I\'m always excited to work on innovative projects.',
   form: {
     labels: {
       name: 'Name',
@@ -12,8 +12,8 @@ export const contactConfig = {
     placeholders: {
       name: 'Your name',
       email: 'your.email@example.com',
-      phone: '+1 (555) 123-4567',
-      message: 'Tell me about your project...',
+      phone: '+91 6232642389',
+      message: 'Tell me about your project or idea...',
     },
     submitButton: 'Send Message',
     successMessage: "Thanks for your message! I'll get back to you soon.",

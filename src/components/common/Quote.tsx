@@ -1,6 +1,6 @@
 'use client';
 
-import { quotes } from '@/config/Quote';
+import { moreGitaQuotes } from '@/config/Quote';
 import { useEffect, useState } from 'react';
 
 import Container from './Container';
@@ -12,7 +12,7 @@ export const Quote = () => {
   } | null>(null);
 
   useEffect(() => {
-    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    const randomQuote = moreGitaQuotes[Math.floor(Math.random() * moreGitaQuotes.length)];
     setCurrentQuote(randomQuote);
   }, []);
 

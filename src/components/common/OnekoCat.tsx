@@ -1,3 +1,6 @@
+
+'use client';
+
 import { catConfig } from '@/config/Cat';
 import Script from 'next/script';
 import React from 'react';

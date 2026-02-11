@@ -40,6 +40,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
             alt={project.title}
             width={1920}
             height={1080}
+            priority
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwA/8A8A"
           />
           {project.video && (
             <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
@@ -148,12 +151,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
             {project.isWorking ? (
               <>
                 <div className="size-2 animate-pulse rounded-full bg-green-500" />
-                All Systems Operational
+                Building
               </>
             ) : (
               <>
                 <div className="size-2 animate-pulse rounded-full bg-red-500" />
-                Building
+                All Systems Operational
               </>
             )}
           </div>

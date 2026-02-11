@@ -31,12 +31,9 @@ interface Message {
 const initialMessages: Message[] = [
   {
     id: 1,
-    text: "Hello! I'm Ram's Portfolio Assistant. How can I help you?",
+    text: "Hello! I'm Anshul's Portfolio Assistant. How can I help you?",
     sender: 'bot',
-    timestamp: new Date().toLocaleTimeString([], {
-      hour: '2-digit',
-      minute: '2-digit',
-    }),
+    timestamp: '',
   },
 ];
 
@@ -46,6 +43,15 @@ const ChatBubble: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const scrollAreaRef = useRef<HTMLDivElement>(null);
   const { triggerHaptic, isMobile } = useHapticFeedback();
+
+  // Client-side only timestamp generation
+  const generateTimestamp = () => {
+    if (typeof window === 'undefined') return '';
+    return new Date().toLocaleTimeString([], {
+      hour: '2-digit',
+      minute: '2-digit',
+    });
+  };
 
   // Auto-scroll to bottom when new messages are added
   useEffect(() => {
@@ -72,10 +78,7 @@ const ChatBubble: React.FC = () => {
       id: Date.now(),
       text: messageText,
       sender: 'user',
-      timestamp: new Date().toLocaleTimeString([], {
-        hour: '2-digit',
-        minute: '2-digit',
-      }),
+      timestamp: generateTimestamp(),
     };
 
     setMessages((prev) => [...prev, userMessage]);
@@ -88,10 +91,7 @@ const ChatBubble: React.FC = () => {
       id: botMessageId,
       text: '',
       sender: 'bot',
-      timestamp: new Date().toLocaleTimeString([], {
-        hour: '2-digit',
-        minute: '2-digit',
-      }),
+      timestamp: generateTimestamp(),
       isStreaming: true,
     };
 
@@ -120,10 +120,7 @@ const ChatBubble: React.FC = () => {
       id: Date.now(),
       text: suggestion,
       sender: 'user',
-      timestamp: new Date().toLocaleTimeString([], {
-        hour: '2-digit',
-        minute: '2-digit',
-      }),
+      timestamp: generateTimestamp(),
     };
 
     setMessages((prev) => [...prev, userMessage]);
@@ -135,10 +132,7 @@ const ChatBubble: React.FC = () => {
       id: botMessageId,
       text: '',
       sender: 'bot',
-      timestamp: new Date().toLocaleTimeString([], {
-        hour: '2-digit',
-        minute: '2-digit',
-      }),
+      timestamp: generateTimestamp(),
       isStreaming: true,
     };
 
@@ -337,16 +331,18 @@ const ChatBubble: React.FC = () => {
                         )}
                       </div>
                     </div>
-                    <p
-                      className={cn(
-                        'mt-1 text-xs',
-                        message.sender === 'user'
-                          ? 'text-secondary'
-                          : 'text-muted-foreground',
-                      )}
-                    >
-                      {message.timestamp}
-                    </p>
+                    {message.timestamp && (
+                      <p
+                        className={cn(
+                          'mt-1 text-xs',
+                          message.sender === 'user'
+                            ? 'text-secondary'
+                            : 'text-muted-foreground',
+                        )}
+                      >
+                        {message.timestamp}
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>

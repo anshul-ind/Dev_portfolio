@@ -62,63 +62,56 @@ function checkRateLimit(clientIP: string): {
   };
 }
 
-async function sendToTelegram(data: {
+async function sendEmail(data: {
   name: string;
   email: string;
   phone: string;
   message: string;
 }): Promise<boolean> {
-  const telegramToken = process.env.TELEGRAM_BOT_TOKEN;
-  const telegramChatId = process.env.TELEGRAM_CHAT_ID;
-
-  if (!telegramToken) {
-    console.error('TELEGRAM_BOT_TOKEN not configured');
-    return false;
-  }
-
-  if (!telegramChatId) {
-    console.error('TELEGRAM_CHAT_ID not configured');
-    return false;
-  }
-
-  const message = `
-🔔 *New Contact Form Submission*
-
-👤 *Name:* ${data.name.trim()}
-📧 *Email:* ${data.email.trim()}
-📱 *Phone:* ${data.phone.trim()}
-
-💬 *Message:*
-${data.message.trim()}
-
-⏰ *Submitted:* ${new Date().toISOString()}
-📍 *Timezone:* ${Intl.DateTimeFormat().resolvedOptions().timeZone}
-  `.trim();
-
   try {
-    const telegramUrl = `https://api.telegram.org/bot${telegramToken}/sendMessage`;
+    // Create contact submission object
+    const submission = {
+      name: data.name,
+      email: data.email,
+      phone: data.phone,
+      message: data.message,
+      timestamp: new Date().toISOString(),
+    };
 
-    const response = await fetch(telegramUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        chat_id: telegramChatId,
-        text: message,
-        parse_mode: 'Markdown',
-      }),
-    });
+    // 1. Log to console (for development)
+    console.log('📧 NEW CONTACT FORM SUBMISSION:', submission);
+    console.log('='.repeat(50));
+    console.log(`Name: ${submission.name}`);
+    console.log(`Email: ${submission.email}`);
+    console.log(`Phone: ${submission.phone}`);
+    console.log(`Message: ${submission.message}`);
+    console.log(`Time: ${submission.timestamp}`);
+    console.log('='.repeat(50));
 
-    if (response.ok) {
-      return true;
-    } else {
-      const errorText = await response.text();
-      console.error('Failed to send to Telegram:', errorText);
-      return false;
+    // 2. Save to local file (for persistent storage)
+    try {
+      const fs = require('fs').promises;
+      const path = require('path');
+      
+      // Create submissions directory if it doesn't exist
+      const submissionsDir = path.join(process.cwd(), 'submissions');
+      await fs.mkdir(submissionsDir, { recursive: true });
+      
+      // Save submission to JSON file
+      const filename = `contact-${Date.now()}.json`;
+      const filepath = path.join(submissionsDir, filename);
+      await fs.writeFile(filepath, JSON.stringify(submission, null, 2));
+      
+      console.log(`💾 Contact submission saved to: ${filename}`);
+    } catch (fileError) {
+      console.warn('Could not save to file:', fileError);
     }
+
+    // Simulate successful email send
+    // TODO: Integrate with actual email service like Resend
+    return true;
   } catch (error) {
-    console.error('Error sending to Telegram:', error);
+    console.error('Failed to send email:', error);
     return false;
   }
 }
@@ -148,9 +141,9 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const validatedData = contactSchema.parse(body);
 
-    const telegramSent = await sendToTelegram(validatedData);
+    const emailSent = await sendEmail(validatedData);
 
-    if (!telegramSent) {
+    if (!emailSent) {
       return NextResponse.json(
         { error: 'Failed to send message. Please try again.' },
         { status: 500 },

@@ -1,0 +1,4 @@
+[
+  { "id": "white", "label": "White", "file": "/oneko/sprites/white.gif", "thumb": "/oneko/thumbs/white.png", "author": "?", "license": "?" },
+  { "id": "purple", "label": "Purple", "file": "/oneko/sprites/purple.png", "thumb": "/oneko/thumbs/purple.png" }
+]

@@ -12,16 +12,16 @@ export interface PageMeta {
 // Base site configuration
 export const siteConfig = {
   name: heroConfig.name,
-  title: 'Sleek Portfolio',
-  description: 'Sleek Portfolio Template by @Ramxcodes',
+  title: 'Anshul Chouhan - Portfolio',
+  description: 'Full-Stack Developer | Web3 & AI Enthusiast',
   url: process.env.NEXT_PUBLIC_URL || 'http://localhost:3000',
   ogImage: '/meta/opengraph-image.png',
   author: {
     name: about.name,
-    twitter: '@ramxcodes',
-    github: 'ramxcodes',
-    linkedin: 'ramxcodes',
-    email: 'ramxcodes@gmail.com',
+    twitter: '@icantflyD',
+    github: 'anshul-ind',
+    linkedin: 'anshul5176',
+    email: 'anshulchouhan5176@gmail.com',
   },
   keywords: [
     'portfolio',
@@ -30,7 +30,11 @@ export const siteConfig = {
     'react',
     'nextjs',
     'typescript',
+    'web3',
+    'ai',
+    'hackathon',
     'web development',
+    'blockchain',
     heroConfig.name.toLowerCase(),
   ],
 };

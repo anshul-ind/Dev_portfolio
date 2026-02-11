@@ -3,10 +3,9 @@ import CheckCircle from '@/components/svgs/CheckCircle';
 import { Separator } from '@/components/ui/separator';
 import { generateMetadata as getMetadata } from '@/config/Meta';
 import { settingsJson, steps } from '@/config/Setup';
-import { Download, ExternalLink, FileText } from 'lucide-react';
-import { Metadata } from 'next';
-import Link from 'next/link';
+import { FileText } from 'lucide-react';
 import React from 'react';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   ...getMetadata('/setup'),
@@ -64,47 +63,23 @@ export default function SetupPage() {
               <div className="ml-4 space-y-3 sm:ml-8 md:ml-16 md:space-y-4">
                 {step.content.map((item, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    {item.type === 'download' && (
-                      <Link
-                        href={item.href || '#'}
-                        download
-                        className="bg-muted/50 hover:bg-muted/70 flex w-full flex-col gap-3 rounded-lg border border-black/10 p-3 transition-colors sm:flex-row sm:items-center md:p-4 dark:border-white/10"
-                      >
-                        <Download className="text-muted-foreground size-4 flex-shrink-0" />
-                        <div className="flex-1">
-                          <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
-                            <span className="text-sm font-medium">
-                              {item.name}
-                            </span>
-                            <ExternalLink className="text-muted-foreground size-3" />
-                          </div>
-                          <p className="text-muted-foreground mt-1 text-sm">
-                            {item.description}
-                          </p>
-                        </div>
-                      </Link>
-                    )}
-
                     {item.type === 'instruction' && (
                       <div className="flex items-center gap-3">
-                        <p className="text-secondary text-sm">{item.text}</p>
+                        <div className="bg-primary/10 text-primary mt-1 size-2 flex-shrink-0 rounded-full" />
+                        <p className="text-muted-foreground text-sm">{item.text}</p>
                       </div>
                     )}
 
-                    {item.type === 'shortcut' && (
-                      <div className="bg-accent/50 flex w-full items-center gap-3 rounded-lg border border-black/10 p-3 dark:border-white/10">
-                        <kbd className="bg-muted rounded border border-black/20 px-2 py-1 font-mono text-xs break-all dark:border-white/20">
-                          {item.text}
-                        </kbd>
-                      </div>
-                    )}
-
-                    {item.type === 'prompt' && (
-                      <div className="bg-muted/50 flex w-full items-center gap-3 rounded-lg border border-black/10 p-3 dark:border-white/10">
-                        <FileText className="text-muted-foreground size-4 flex-shrink-0" />
-                        <code className="text-secondary font-mono text-sm break-all">
-                          {item.text}
-                        </code>
+                    {item.type === 'list' && (
+                      <div className="ml-4 space-y-2">
+                        <p className="text-muted-foreground text-sm">{item.text}</p>
+                        <ul className="list-disc list-inside space-y-1">
+                          {item.items?.map((listItem, listIndex) => (
+                            <li key={listIndex} className="text-muted-foreground text-sm">
+                              {listItem}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     )}
                   </div>

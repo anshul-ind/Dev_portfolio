@@ -35,6 +35,7 @@ import NodeJs from '@/components/technologies/NodeJs';
 import PostgreSQL from '@/components/technologies/PostgreSQL';
 import Prisma from '@/components/technologies/Prisma';
 import ReactIcon from '@/components/technologies/ReactIcon';
+import TailwindCss from '@/components/technologies/TailwindCss';
 // Technology Components
 import TypeScript from '@/components/technologies/TypeScript';
 
@@ -49,21 +50,17 @@ export const skillComponents = {
   MongoDB: MongoDB,
   Prisma: Prisma,
   JavaScript: JavaScript,
+  TailwindCss: TailwindCss,
 };
 
 export const heroConfig = {
   // Personal Information
-  name: 'Ram',
-  title: 'A Full Stack web developer.',
+  name: 'Anshul Chouhan',
+  title: 'Full-Stack Developer | Web3 & AI Enthusiast | Hackathon Builder',
   avatar: '/assets/logo.png',
 
   // Skills Configuration
   skills: [
-    {
-      name: 'Typescript',
-      href: 'https://www.typescriptlang.org/',
-      component: 'TypeScript',
-    },
     {
       name: 'React',
       href: 'https://react.dev/',
@@ -75,21 +72,26 @@ export const heroConfig = {
       component: 'NextJs',
     },
     {
-      name: 'Bun',
-      href: 'https://bun.sh/',
-      component: 'Bun',
+      name: 'TypeScript',
+      href: 'https://www.typescriptlang.org/',
+      component: 'TypeScript',
     },
     {
-      name: 'PostgreSQL',
-      href: 'https://www.postgresql.org/',
-      component: 'PostgreSQL',
+      name: 'Node.js',
+      href: 'https://nodejs.org/',
+      component: 'NodeJs',
+    },
+    {
+      name: 'Tailwind CSS',
+      href: 'https://tailwindcss.com/',
+      component: 'TailwindCss',
     },
   ],
 
   // Description Configuration
   description: {
     template:
-      'I build interactive web apps using {skills:0}, {skills:1}, {skills:2}, {skills:3} and {skills:4}. With a focus on <b>UI</b> design. Enthusiastic about <b>Three.js</b>, driven by a keen eye for design.',
+      'Full-stack developer passionate about building scalable web applications, AI-powered tools, and Web3 products using {skills:0}, {skills:1}, {skills:2}, {skills:3} and {skills:4}. Active hackathon participant and organizer with proven project delivery skills.',
   },
 
   // Buttons Configuration
@@ -113,22 +115,22 @@ export const heroConfig = {
 export const socialLinks = [
   {
     name: 'X',
-    href: 'https://x.com/ramxcodes',
+    href: 'https://x.com/icantflyD',
     icon: <X />,
   },
   {
     name: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/ramxcodes/',
+    href: 'https://www.linkedin.com/in/anshul5176/',
     icon: <LinkedIn />,
   },
   {
     name: 'Github',
-    href: 'https://github.com/ramxcodes',
+    href: 'https://github.com/anshul-ind',
     icon: <Github />,
   },
   {
     name: 'Email',
-    href: 'mailto:ramxcodes@gmail.com',
+    href: 'mailto:anshulchouhan5176@gmail.com',
     icon: <Mail />,
   },
 ];
