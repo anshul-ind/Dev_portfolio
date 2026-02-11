@@ -106,7 +106,7 @@ export const projects: Project[] = [
   {
     title: 'Academic Notes Sharing Portal',
     description: 'Collaborative study material sharing platform for students',
-    image: '/project/SecureFin.png',
+    image: '/project/Sidcup.png',
     link: '#',
     technologies: [
       { name: 'React', icon: <ReactIcon key="react" /> },
@@ -120,7 +120,7 @@ export const projects: Project[] = [
   {
     title: 'NoteFi - AI Text Paste Generator',
     description: 'AI-assisted customizable text generation and sharing platform',
-    image: '/project/NotesBuddy.png',
+    image: '/project/Netflix.png',
     link: '#',
     technologies: [
       { name: 'React', icon: <ReactIcon key="react" /> },
