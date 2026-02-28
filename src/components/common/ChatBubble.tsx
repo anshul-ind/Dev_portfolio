@@ -143,6 +143,20 @@ const ChatBubble: React.FC = () => {
   };
 
   const sendMessage = async (messageText: string, botMessageId: number) => {
+    // Check if we're in a static build environment
+    if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
+      // Show a message for static builds
+      const botMessage: Message = {
+        id: botMessageId,
+        sender: 'bot',
+        text: 'Chat feature is not available in static builds. Please deploy to a server platform to enable this feature.',
+        timestamp: new Date().toISOString(),
+      };
+      setMessages((prev) => [...prev, botMessage]);
+      setIsLoading(false);
+      return;
+    }
+
     try {
       // Prepare conversation history for Gemini API format
       const history = messages.slice(-10).map((msg) => ({
